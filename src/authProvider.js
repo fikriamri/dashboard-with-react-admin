@@ -13,8 +13,6 @@ const authProvider = {
               return response.json();
           })
           .then(response => {
-            console.log('response', response);
-
               localStorage.setItem('token', response.data.token);
               localStorage.setItem('role', 'user');
           });

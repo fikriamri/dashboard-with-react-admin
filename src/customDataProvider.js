@@ -24,9 +24,7 @@ const httpClient = (url, options = {}) => {
 // We need this to comply with react-admin needs
 const getListFromResponse = response => {
   const { headers, json } = response
-  console.log('json', json)
   if ('count' in json) {
-    console.log('json.data', json.data);
     return { data: camelCaseKeys(json.data, { deep: true }), total: json.count }
   }
   if (headers.has('content-range')) {
