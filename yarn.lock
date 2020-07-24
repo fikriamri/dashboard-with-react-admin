@@ -9048,6 +9048,11 @@ ra-language-english@^3.7.1:
   dependencies:
     ra-core "^3.7.1"
 
+ra-language-indonesian@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/ra-language-indonesian/-/ra-language-indonesian-3.4.1.tgz#60393cf5aaf4fecc34a57e0f8f01c77f09200e4c"
+  integrity sha512-Bt9JKAB4syRxiBTViZqtHCnrUmB/AZlZsWK2mMGac9r56YKJ3h2EGrAVOO6r76Ay0wp/NCtH17IWkSc5eqwmSw==
+
 ra-ui-materialui@^3.7.1:
   version "3.7.1"
   resolved "https://registry.yarnpkg.com/ra-ui-materialui/-/ra-ui-materialui-3.7.1.tgz#111883d4d27c197f3171e58a836811839619f509"
