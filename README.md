@@ -2,6 +2,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+### `yarn install`
+You need to install all of the dependencies and create yarn.lock file that store locked version of the dependecies used in this project.
+
 In the project directory, you can run:
 
 ### `yarn start`
