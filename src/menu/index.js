@@ -19,6 +19,7 @@ const Menu = ({ onMenuClick, logout }) => {
                 leftIcon={<DashboardIcon />}
                 onClick={onMenuClick}
                 sidebarIsOpen={open}
+                exact
             />
             {resources.map(resource => (
                 <MenuItemLink

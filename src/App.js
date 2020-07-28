@@ -5,7 +5,7 @@ import { createHashHistory } from 'history';
 import englishMessages from 'ra-language-english';
 import indonesianMessages from 'ra-language-indonesian';
 import polyglotI18nProvider from 'ra-i18n-polyglot';
-import createAdminStore from './redux/createAdminStore';
+import createAdminStore from './createAdminStore';
 
 import authProvider from './authProvider';
 import { UserList } from './resources/users';
@@ -18,6 +18,7 @@ import customDataProvider from './dataProvider';
 import Dashboard from './pages/Dashboard';
 import customRoutes from './routes';
 import Menu from './menu';
+import dashboardReducer from './redux/Dashboard/reducer';
 
 const messages = {
   id: indonesianMessages,
@@ -33,20 +34,22 @@ const i18nProvider = polyglotI18nProvider(locale => {
 const history = createHashHistory();
 
 const App = () => (
-  <Provider
-    store={createAdminStore({
-      authProvider,
-      customDataProvider,
-      history
-    })}
-  >
+  // For the sake of PoC, code commented below will be keeped as is until PoC is finished.
+  // <Provider
+  //   store={createAdminStore({
+  //     authProvider,
+  //     customDataProvider,
+  //     history
+  //   })}
+  // >
     <Admin
       menu={Menu}
       dashboard={Dashboard}
       authProvider={authProvider}
       dataProvider={customDataProvider}
       customRoutes={customRoutes}
-      history={history}
+      customReducers={{ dashboard: dashboardReducer }}
+      // history={history}
     >
       <Resource
         name="book"
@@ -54,7 +57,7 @@ const App = () => (
         icon={CollectionsBookmarkIcon}
       />
     </Admin>
-  </Provider>
+  // </Provider>
 )
 
 export default App;

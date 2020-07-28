@@ -7,6 +7,9 @@ import {
     adminSaga,
     USER_LOGOUT,
 } from 'react-admin';
+import thunk from 'redux-thunk';
+
+import dashboardReducer from './redux/Dashboard/reducer';
 
 export default ({
     authProvider,
@@ -16,7 +19,7 @@ export default ({
     const reducer = combineReducers({
         admin: adminReducer,
         router: connectRouter(history),
-        // { /* add your own reducers here */ },
+        dashboard: dashboardReducer,
     });
     const resettableAppReducer = (state, action) =>
         reducer(action.type !== USER_LOGOUT ? state : undefined, action);
@@ -49,6 +52,7 @@ export default ({
                 sagaMiddleware,
                 routerMiddleware(history),
                 // add your own middlewares here
+                
             ),
             // add your own enhancers here
         ),        
